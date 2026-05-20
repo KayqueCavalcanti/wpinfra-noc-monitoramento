@@ -1,0 +1,62 @@
+{
+  "_comment": "IPs de demonstração. Substitua pelos IPs reais das filiais WP Infra.",
+  "targets": [
+    {
+      "id":               "sp-fw-01",
+      "name":             "Firewall Principal",
+      "host":             "8.8.8.8",
+      "branch":           "São Paulo — HQ",
+      "monitor_type":     "ICMP",
+      "interval_seconds": 30,
+      "timeout_seconds":  5
+    },
+    {
+      "id":               "rj-dns-01",
+      "name":             "Servidor DNS",
+      "host":             "1.1.1.1",
+      "branch":           "Rio de Janeiro",
+      "monitor_type":     "TCP",
+      "port":             53,
+      "interval_seconds": 30,
+      "timeout_seconds":  5
+    },
+    {
+      "id":               "bh-gw-01",
+      "name":             "Gateway Core",
+      "host":             "8.8.4.4",
+      "branch":           "Belo Horizonte",
+      "monitor_type":     "ICMP",
+      "interval_seconds": 30,
+      "timeout_seconds":  5
+    },
+    {
+      "id":               "poa-srv-01",
+      "name":             "Servidor de Aplicação",
+      "host":             "9.9.9.9",
+      "branch":           "Porto Alegre",
+      "monitor_type":     "ICMP",
+      "interval_seconds": 30,
+      "timeout_seconds":  5
+    },
+    {
+      "id":               "ssa-px-01",
+      "name":             "Proxy Reverso",
+      "host":             "208.67.222.222",
+      "branch":           "Salvador",
+      "monitor_type":     "TCP",
+      "port":             443,
+      "interval_seconds": 30,
+      "timeout_seconds":  5
+    },
+    {
+      "id":               "bsb-core-01",
+      "name":             "Core Switch",
+      "host":             "1.0.0.1",
+      "branch":           "Brasília",
+      "monitor_type":     "TCP",
+      "port":             53,
+      "interval_seconds": 30,
+      "timeout_seconds":  5
+    }
+  ]
+}

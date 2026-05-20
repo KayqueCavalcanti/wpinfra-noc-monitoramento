@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WP Infra — NOC</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+  <!-- Notificações de incidente (posição fixed, geradas pelo JS) -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- ─── HEADER ──────────────────────────────────────────────── -->
+  <header class="header">
+    <div class="header-left">
+      <span class="brand">WP INFRA</span>
+      <span class="sep">|</span>
+      <span class="brand-sub">CENTRAL DE MONITORAMENTO — NOC</span>
+    </div>
+    <div class="header-right">
+      <div class="ws-badge" id="wsBadge">
+        <span class="ws-dot" id="wsDot"></span>
+        <span class="ws-label" id="wsLabel">CONECTANDO</span>
+      </div>
+      <div class="clock" id="clock">--:--:--</div>
+    </div>
+  </header>
+
+  <!-- ─── SUMMARY BAR ─────────────────────────────────────────── -->
+  <div class="summary-bar">
+    <div class="summary-item">
+      <span class="summary-value" id="statTotal">--</span>
+      <span class="summary-label">TOTAL</span>
+    </div>
+    <div class="summary-sep"></div>
+    <div class="summary-item">
+      <span class="summary-value s-online" id="statOnline">--</span>
+      <span class="summary-label">ONLINE</span>
+    </div>
+    <div class="summary-sep"></div>
+    <div class="summary-item">
+      <span class="summary-value s-offline" id="statOffline">--</span>
+      <span class="summary-label">OFFLINE</span>
+    </div>
+    <div class="summary-sep"></div>
+    <div class="summary-item">
+      <span class="summary-value s-degraded" id="statDegraded">--</span>
+      <span class="summary-label">DEGRADADO</span>
+    </div>
+    <div class="summary-sep"></div>
+    <div class="summary-item">
+      <span class="summary-value" id="statAvgLat">--</span>
+      <span class="summary-label">MÉD. LATÊNCIA</span>
+    </div>
+  </div>
+
+  <!-- ─── MAIN ─────────────────────────────────────────────────── -->
+  <main class="main">
+    <div class="grid" id="grid">
+      <!-- Cards gerados dinamicamente pelo app.js -->
+    </div>
+
+    <!-- ─── EVENT LOG ─────────────────────────────────────────── -->
+    <section class="log-section">
+      <div class="log-header">
+        <span class="log-title">LOG DE EVENTOS</span>
+        <span class="log-meta" id="logMeta">0 eventos</span>
+      </div>
+      <div class="log-wrapper">
+        <table class="log-table">
+          <thead>
+            <tr>
+              <th>TIMESTAMP</th>
+              <th>FILIAL</th>
+              <th>ALVO</th>
+              <th>HOST</th>
+              <th>STATUS</th>
+              <th>LATÊNCIA</th>
+              <th>MENSAGEM</th>
+            </tr>
+          </thead>
+          <tbody id="logBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

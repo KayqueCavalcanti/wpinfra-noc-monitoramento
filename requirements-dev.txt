@@ -1,0 +1,10 @@
+# ─── Dependências de Desenvolvimento e Testes ─────────────────
+# Instalar com: pip install -r requirements.txt -r requirements-dev.txt
+
+# Testes
+pytest>=7.4.0
+pytest-asyncio>=0.23.0
+httpx>=0.26.0          # cliente HTTP para testar endpoints FastAPI
+
+# Qualidade de código
+ruff>=0.3.0            # linter + formatter (substitui flake8 + isort + black)
